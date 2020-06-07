@@ -8,4 +8,3 @@ project(solver_lib)
 add_library(${PROJECT_NAME} STATIC solver.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-© 2020 GitHub, Inc.
