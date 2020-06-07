@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/hello_world_application.dir/hello_world.cpp.o  -o hello_world_application  ../formatter_ex_lib/libformatter_ex_lib.a ../formatter_lib/libformatter_lib.a 
