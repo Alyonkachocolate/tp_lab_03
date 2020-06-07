@@ -1,0 +1,3 @@
+/Users/user/Timp/Lab_03/lab03/solver_application/build/CMakeFiles/rebuild_cache.dir
+/Users/user/Timp/Lab_03/lab03/solver_application/build/CMakeFiles/edit_cache.dir
+/Users/user/Timp/Lab_03/lab03/solver_application/build/CMakeFiles/solver_application.dir
