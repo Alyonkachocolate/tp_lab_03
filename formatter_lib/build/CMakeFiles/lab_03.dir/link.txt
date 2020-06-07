@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc liblab_03.a  CMakeFiles/lab_03.dir/formatter.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib liblab_03.a
