@@ -1,7 +1,4 @@
 language: cpp
 
 script:
-  - cmake -H./formatter_lib -B./formatter_lib/build && cmake --build ./formatter_lib/build
-  - cmake -H./formatter_ex_lib -B./formatter_ex_lib/build && cmake --build ./formatter_ex_lib/build
-  - cmake -H./hello_world_application -B./hello_world_application/build && cmake --build ./hello_world_application/build
-  - cmake -H./solver_application -B./solver_application/build && cmake --build ./solver_application/build
+  - cmake -H. -Bbuild && cmake --build build
