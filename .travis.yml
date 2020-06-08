@@ -15,6 +15,7 @@ jobs:
         file: ./build/print-*.dmg
         on:
           tags: true
+
     - os: linux # DEB
       before_script:
         - cmake -H. -Bbuild -DCPACK_GENERATOR="DEB"
@@ -28,6 +29,7 @@ jobs:
         file: ./build/print-*.deb
         on:
           tags: true
+
     - os: linux # RPM
       addons:
         apt:
