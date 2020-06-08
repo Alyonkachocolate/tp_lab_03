@@ -1,4 +1,4 @@
-version: 1.0.{build}
+version: 0.1.0{build}
 
 image:
   - Visual Studio 2013
@@ -7,7 +7,7 @@ image:
   - Visual Studio 2019
 
 before_build:
-  - cmd: cmake -H. -Bbuild
+  - cmd: cmake -H. -Bbuild -DCPACK_GENERATOR="WIX"
 
 build_script:
-  - cmd: cmake --build build
+  - cmd: cmake --build build --target package
