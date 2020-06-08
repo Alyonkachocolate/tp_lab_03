@@ -2,3 +2,7 @@ language: cpp
 
 script:
   - cmake -H. -Bbuild && cmake --build build
+
+compiler:
+  - clang
+  - gcc
