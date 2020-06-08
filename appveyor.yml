@@ -7,13 +7,7 @@ image:
   - Visual Studio 2019
 
 before_build:
-  - cmd: cmake -H./formatter_lib -B./formatter_lib/build
-  - cmd: cmake -H./formatter_ex_lib -B./formatter_ex_lib/build
-  - cmd: cmake -H./hello_world_application -B./hello_world_application/build
-  - cmd: cmake -H./solver_application -B./solver_application/build
+  - cmd: cmake -H. -Bbuild
 
 build_script:
-  - cmd: cmake --build ./formatter_lib/build
-  - cmd: cmake --build ./formatter_ex_lib/build
-  - cmd: cmake --build ./hello_world_application/build
-  - cmd: cmake --build ./solver_application/build
+  - cmd: cmake --build build

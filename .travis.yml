@@ -1,8 +1,11 @@
 language: cpp
 
-script:
-  - cmake -H. -Bbuild && cmake --build build
-
 compiler:
   - clang
   - gcc
+
+before_script:
+  - cmake -H. -Bbuild
+
+script:
+  - cmake --build build
