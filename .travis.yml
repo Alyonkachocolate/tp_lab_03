@@ -1,11 +1,23 @@
 language: cpp
 
-compiler:
-  - clang
-  - gcc
-
-before_script:
-  - cmake -H. -Bbuild
-
-script:
-  - cmake --build build
+jobs:
+  include:
+    - os: osx
+      before_script:
+        - cmake -H. -Bbuild -DCPACK_GENERATOR="DragNDrop" # dmg
+      script:
+        - cmake --build build --target package
+    - os: linux
+      before_script:
+        - cmake -H. -Bbuild -DCPACK_GENERATOR="DEB" # deb
+      script:
+        - cmake --build build --target package
+    - os: linux
+      addons:
+        apt:
+          packages:
+            - rpm
+      before_script:
+        - cmake -H. -Bbuild -DCPACK_GENERATOR="RPM" # rpm
+      script:
+        - cmake --build build --target package
