@@ -1,23 +1,45 @@
-language: cpp
-
 jobs:
   include:
-    - os: osx
+    - os: osx # DMG
       before_script:
-        - cmake -H. -Bbuild -DCPACK_GENERATOR="DragNDrop" # dmg
+        - cmake -H. -Bbuild -DCPACK_GENERATOR="DragNDrop"
       script:
         - cmake --build build --target package
-    - os: linux
+      deploy:
+        cleanup: false
+        provider: releases
+        api_key: ${GITHUB_RELEASES_TOKEN}
+        file_glob: true
+        file: ./build/print-*.dmg
+        on:
+          tags: true
+    - os: linux # DEB
       before_script:
-        - cmake -H. -Bbuild -DCPACK_GENERATOR="DEB" # deb
+        - cmake -H. -Bbuild -DCPACK_GENERATOR="DEB"
       script:
         - cmake --build build --target package
-    - os: linux
+      deploy:
+        cleanup: false
+        provider: releases
+        api_key: ${GITHUB_RELEASES_TOKEN}
+        file_glob: true
+        file: ./build/print-*.deb
+        on:
+          tags: true
+    - os: linux # RPM
       addons:
         apt:
           packages:
             - rpm
       before_script:
-        - cmake -H. -Bbuild -DCPACK_GENERATOR="RPM" # rpm
+        - cmake -H. -Bbuild -DCPACK_GENERATOR="RPM"
       script:
         - cmake --build build --target package
+      deploy:
+        cleanup: false
+        provider: releases
+        api_key: ${GITHUB_RELEASES_TOKEN}
+        file_glob: true
+        file: ./build/print-*.rpm
+        on:
+          tags: true
